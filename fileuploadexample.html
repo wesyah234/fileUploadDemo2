@@ -1,0 +1,23 @@
+<head>
+  <title>File Upload Demo 2</title>
+</head>
+
+<body>
+  {{>fileList}}
+</body>
+
+<template name="fileList">
+  <br/>Testing file upload below<br/><br/>
+  {{> upload_bootstrap multiple=true callbacks=myCallbacks formData=someStuff }}
+  <br/><br/>
+
+  <table border="1">
+    <tbody>
+      {{#each theUploads}}
+      <tr>
+        <td>{{name}}</td><td><a href="/upload{{path}}">link</a></td><td><button id="deleteFileButton">delete</button></td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>
