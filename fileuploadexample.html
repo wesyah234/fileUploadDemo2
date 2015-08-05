@@ -10,12 +10,13 @@
   <br/>Testing file upload below<br/><br/>
   {{> upload_bootstrap multiple=true callbacks=myCallbacks formData=someStuff }}
   <br/><br/>
+        note, use target = _blank in the anchor tag to open a new tab so meteor app is not reloaded
 
   <table border="1">
     <tbody>
       {{#each theUploads}}
       <tr>
-        <td>{{name}}</td><td><a href="/upload{{path}}">link</a></td><td><button id="deleteFileButton">delete</button></td>
+        <td>{{name}}</td><td><a target="_blank" href="/upload{{path}}">link</a></td><td><button id="deleteFileButton">delete</button></td>
       </tr>
       {{/each}}
     </tbody>
